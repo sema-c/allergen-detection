@@ -1,87 +1,87 @@
-# Allergen Detection System
+# Alerjen Tespit Sistemi
 
-Deep learning-based allergen detection system for food images using YOLOv8.
+YOLOv8 kullanarak yemek görüntülerinden alerjen tespiti yapan derin öğrenme projesi.
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![YOLOv8](https://img.shields.io/badge/YOLOv8-Ultralytics-green.svg)](https://github.com/ultralytics/ultralytics)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-## Overview
+## Genel Bakış
 
-This project implements an object detection system for identifying allergens in food images. Using YOLOv8, the model can detect five different allergen categories in real-time.
+Bu proje, yemek görüntülerindeki alerjenleri tespit eden bir nesne tanıma sistemi içermektedir. YOLOv8 modeli kullanılarak beş farklı alerjen kategorisi gerçek zamanlı olarak tespit edilebilmektedir.
 
-### Detected Allergens
-- Dairy Products
+### Tespit Edilen Allerjenler
+- Süt Ürünleri
 - Gluten
-- Egg
-- Seafood
-- Nuts
+- Yumurta
+- Deniz Ürünleri
+- Kuruyemiş
 
-## Model Performance
+## Model Performansı
 
-### General Metrics
-- **Architecture**: YOLOv8n (Nano)
-- **Input Size**: 416x416
-- **Training Epochs**: 50
-- **Dataset**: UECFOOD-256 (15,805 images)
-- **Overall mAP@0.5**: 61.1%
-- **Overall mAP@0.5-0.95**: 45.8%
+### Genel Metrikler
+- **Model**: YOLOv8n (Nano)
+- **Görüntü Boyutu**: 416x416
+- **Eğitim Epoch**: 50
+- **Veri Seti**: UECFOOD-256 (15,805 görüntü)
+- **Genel mAP@0.5**: 61.1%
+- **Genel mAP@0.5-0.95**: 45.8%
 
-### Class-wise Performance
+### Sınıf Bazlı Performans
 
-| Allergen | mAP@0.5 | mAP@0.5-0.95 | Precision | Recall | Samples |
-|----------|---------|--------------|-----------|--------|---------|
+| Alerjen | mAP@0.5 | mAP@0.5-0.95 | Precision | Recall | Örnek Sayısı |
+|---------|---------|--------------|-----------|--------|--------------|
 | Gluten | 82.1% | 63.6% | 68.6% | 87.1% | 1,757 |
-| Seafood | 69.2% | 47.6% | 62.6% | 74.8% | 654 |
-| Dairy | 66.0% | 51.7% | 55.6% | 78.4% | 533 |
-| Egg | 53.9% | 40.0% | 49.6% | 69.4% | 589 |
-| Nuts | 34.5% | 26.3% | 39.0% | 56.2% | 73 |
+| Deniz Ürünleri | 69.2% | 47.6% | 62.6% | 74.8% | 654 |
+| Süt Ürünleri | 66.0% | 51.7% | 55.6% | 78.4% | 533 |
+| Yumurta | 53.9% | 40.0% | 49.6% | 69.4% | 589 |
+| Kuruyemiş | 34.5% | 26.3% | 39.0% | 56.2% | 73 |
 
-## Features
+## Özellikler
 
-- Real-time allergen detection
-- Multi-class object detection (5 allergen categories)
-- Web-based interface (Gradio)
-- Webcam support
-- Heat map visualization
-- Batch prediction capability
-- Comprehensive performance metrics
+- Gerçek zamanlı alerjen tespiti
+- Çok sınıflı nesne tanıma (5 alerjen kategorisi)
+- Web tabanlı arayüz (Gradio)
+- Webcam desteği
+- Isı haritası görselleştirme
+- Toplu tahmin desteği
+- Detaylı performans metrikleri
 
-## Installation
+## Kurulum
 
-### Requirements
-- Python 3.8 or higher
-- CUDA-compatible GPU (recommended)
+### Gereksinimler
+- Python 3.8 veya üzeri
+- CUDA destekli GPU (önerilir)
 - 8GB+ RAM
 
-### Setup
+### Kurulum Adımları
 
-1. Clone the repository
+1. Repository'yi klonlayın
 ```bash
 git clone https://github.com/sema-c/allergen-detection.git
 cd allergen-detection
 ```
 
-2. Create virtual environment (recommended)
+2. Sanal ortam oluşturun (önerilir)
 ```bash
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
-# or
+# veya
 venv\Scripts\activate  # Windows
 ```
 
-3. Install dependencies
+3. Bağımlılıkları yükleyin
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Download model weights
+4. Model dosyasını indirin
 
-The trained model file (best.pt, ~6MB) is hosted separately due to size constraints:
+Eğitilmiş model dosyası (best.pt, ~6MB) boyut kısıtlaması nedeniyle ayrı olarak barındırılmaktadır:
 
-**[Download Model (best.pt - 6MB)](https://drive.google.com/file/d/1-sP7pEr0ZgFj2L0-25WVUluogDiqgM1g/view?usp=sharing)**
+**[Model İndir (best.pt - 6MB)](https://drive.google.com/file/d/1-sP7pEr0ZgFj2L0-25WVUluogDiqgM1g/view?usp=sharing)**
 
-Place the downloaded file in the `models/` directory:
+İndirilen dosyayı `models/` dizinine yerleştirin:
 ```bash
 # Linux/Mac
 mv ~/Downloads/best.pt models/
@@ -90,13 +90,13 @@ mv ~/Downloads/best.pt models/
 move Downloads\best.pt models\
 ```
 
-## Usage
+## Kullanım
 
-### Web Interface (Gradio)
+### Web Arayüzü (Gradio)
 ```bash
 python app/gradio_app.py
 ```
-The interface will automatically open at `http://localhost:7860`
+Arayüz otomatik olarak `http://localhost:7860` adresinde açılacaktır.
 
 ### Jupyter Notebook
 ```bash
@@ -107,118 +107,118 @@ jupyter notebook notebooks/training.ipynb
 ```python
 from ultralytics import YOLO
 
-# Load model
+# Model yükle
 model = YOLO('models/best.pt')
 
-# Run prediction
+# Tahmin yap
 results = model.predict('path/to/image.jpg', conf=0.25)
 
-# Display results
+# Sonuçları göster
 results[0].show()
 ```
 
-## Project Structure
+## Proje Yapısı
 ```
 allergen-detection/
-├── notebooks/              # Jupyter notebooks
-│   ├── training.ipynb     # Model training
-│   └── evaluation.ipynb   # Model evaluation
-├── app/                    # Web interfaces
-│   ├── gradio_app.py      # Gradio interface
-│   └── streamlit_app.py   # Streamlit interface
-├── models/                 # Trained models
-│   └── best.pt            # Best model weights
-├── results/                # Training results
+├── notebooks/              # Jupyter notebook'lar
+│   ├── training.ipynb     # Model eğitimi
+│   └── evaluation.ipynb   # Model değerlendirme
+├── app/                    # Web arayüzleri
+│   ├── gradio_app.py      # Gradio arayüzü
+│   └── streamlit_app.py   # Streamlit arayüzü
+├── models/                 # Eğitilmiş modeller
+│   └── best.pt            # En iyi model ağırlıkları
+├── results/                # Eğitim sonuçları
 │   ├── confusion_matrix.png
 │   ├── results.png
 │   └── training_curves.png
-├── docs/                   # Documentation
-│   └── REPORT.md          # Detailed project report
-├── assets/                 # Images and media
-│   └── demo.gif           # Demo visualization
-├── requirements.txt        # Python dependencies
-├── .gitignore             # Git ignore file
-├── LICENSE                # MIT License
-└── README.md              # This file
+├── docs/                   # Dökümanlar
+│   └── REPORT.md          # Detaylı proje raporu
+├── assets/                 # Görseller ve medya
+│   └── demo.gif           # Demo görselleştirme
+├── requirements.txt        # Python bağımlılıkları
+├── .gitignore             # Git ignore dosyası
+├── LICENSE                # MIT Lisansı
+└── README.md              # Bu dosya
 ```
 
-## Methodology
+## Metodoloji
 
-### Dataset
-- **Source**: UECFOOD-256
-- **Total Images**: 31,397
-- **Training Set**: 12,344 images
-- **Validation Set**: 3,461 images
-- **Annotations**: 18,097 allergen labels
+### Veri Seti
+- **Kaynak**: UECFOOD-256
+- **Toplam Görüntü**: 31,397
+- **Eğitim Seti**: 12,344 görüntü
+- **Doğrulama Seti**: 3,461 görüntü
+- **Etiketleme**: 18,097 alerjen etiketi
 
-### Training Configuration
+### Eğitim Parametreleri
 - **Model**: YOLOv8n
 - **Optimizer**: AdamW
-- **Learning Rate**: 0.01
-- **Batch Size**: 32
-- **Epochs**: 50
-- **Image Size**: 416x416
-- **Augmentation**: Mosaic, MixUp, HSV, Flip
+- **Öğrenme Oranı**: 0.01
+- **Batch Boyutu**: 32
+- **Epoch**: 50
+- **Görüntü Boyutu**: 416x416
+- **Veri Artırma**: Mosaic, MixUp, HSV, Flip
 
-### Data Augmentation
-- Random horizontal flip
-- HSV color jittering
-- Mosaic augmentation
-- MixUp augmentation
+### Veri Artırma Teknikleri
+- Rastgele yatay çevirme
+- HSV renk değişimi
+- Mosaic artırma
+- MixUp artırma
 
-## Results
+## Sonuçlar
 
-### Strengths
-- Gluten detection achieves highest performance at 82.1% mAP@0.5
-- Average recall of 73.2% demonstrates strong detection capability
-- Balanced performance across seafood and dairy categories
+### Güçlü Yönler
+- Gluten tespitinde en yüksek performans: 82.1% mAP@0.5
+- Ortalama 73.2% recall oranı ile güçlü tespit kabiliyeti
+- Deniz ürünleri ve süt ürünlerinde dengeli performans
 
-### Limitations
-- Lower performance on nuts class (only 73 training samples)
-- Moderate accuracy on egg detection
-- Challenges with small object detection
+### Sınırlamalar
+- Kuruyemiş sınıfında düşük performans (sadece 73 eğitim örneği)
+- Yumurta tespitinde orta seviye doğruluk
+- Küçük nesnelerin tespitinde zorluklar
 
-## Citation
+## Alıntı
 
-If you use this project in your research, please cite:
+Bu projeyi araştırmanızda kullanıyorsanız, lütfen alıntı yapın:
 ```bibtex
 @misc{allergen_detection_2024,
-  title={Allergen Detection System using YOLOv8},
-  author={TÜBİTAK 2209-A Research Project},
+  title={YOLOv8 ile Alerjen Tespit Sistemi},
+  author={TÜBİTAK 2209-A Araştırma Projesi},
   year={2024},
   howpublished={\url{https://github.com/sema-c/allergen-detection}}
 }
 ```
 
-## Disclaimer
+## Sorumluluk Reddi
 
-**IMPORTANT**: This system is designed for research purposes only and should not be used for medical decision-making. Always consult healthcare professionals regarding food allergies and dietary restrictions. The model does not guarantee 100% accuracy and should undergo comprehensive testing before any critical applications.
+**ÖNEMLİ**: Bu sistem yalnızca araştırma amaçlıdır ve tıbbi karar verme için kullanılmamalıdır. Gıda alerjileri ve diyet kısıtlamaları konusunda mutlaka sağlık uzmanlarına danışın. Model yüzde 100 doğruluk garantisi vermez ve kritik uygulamalarda kullanılmadan önce kapsamlı testlerden geçirilmelidir.
 
-## Contributing
+## Katkıda Bulunma
 
-Contributions are welcome! Please follow these steps:
+Katkılarınızı bekliyoruz! Lütfen şu adımları izleyin:
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/improvement`)
-3. Commit your changes (`git commit -m 'Add new feature'`)
-4. Push to the branch (`git push origin feature/improvement`)
-5. Open a Pull Request
+1. Repository'yi fork edin
+2. Yeni bir özellik dalı oluşturun (`git checkout -b feature/iyilestirme`)
+3. Değişikliklerinizi commit edin (`git commit -m 'Yeni özellik eklendi'`)
+4. Dalınızı push edin (`git push origin feature/iyilestirme`)
+5. Pull Request açın
 
-## License
+## Lisans
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Bu proje MIT Lisansı altında lisanslanmıştır - detaylar için [LICENSE](LICENSE) dosyasına bakın.
 
-## Acknowledgments
+## Teşekkürler
 
-- [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics) - Object detection framework
-- [UECFOOD-256 Dataset](http://foodcam.mobi/dataset256.html) - Dataset provider
-- [TÜBİTAK 2209-A Program](https://www.tubitak.gov.tr) - Research funding
-- [Gradio](https://gradio.app/) - Web interface framework
+- [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics) - Nesne tanıma framework'ü
+- [UECFOOD-256 Dataset](http://foodcam.mobi/dataset256.html) - Veri seti sağlayıcısı
+- [TÜBİTAK 2209-A Programı](https://www.tubitak.gov.tr) - Araştırma desteği
+- [Gradio](https://gradio.app/) - Web arayüz framework'ü
 
-## Contact
+## İletişim
 
-For questions or issues, please open an issue on GitHub.
+Sorularınız veya sorunlarınız için lütfen GitHub üzerinden issue açın.
 
 ---
 
-**Note**: Star this repository if you find it useful!
+Bu projeyi faydalı bulduysanız yıldız vermeyi unutmayın!
