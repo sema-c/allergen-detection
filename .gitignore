@@ -1,0 +1,94 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# Model files (too large for GitHub)
+*.pt
+*.pth
+*.onnx
+*.weights
+models/*.pt
+models/*.pth
+
+# Dataset (too large)
+dataset/
+data/
+datasets/
+*.zip
+*.tar.gz
+*.7z
+
+# Training outputs
+runs/
+wandb/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Google Colab
+.config/
+sample_data/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Credentials & Secrets
+*.env
+.env
+secrets.json
+credentials.json
+token.json
+
+# Large result files
+*.mp4
+*.avi
+*.mov
