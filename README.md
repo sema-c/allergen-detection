@@ -178,32 +178,6 @@ allergen-detection/
 - Yumurta tespitinde orta seviye doğruluk
 - Küçük nesnelerin tespitinde zorluklar
 
-## Alıntı
-
-Bu projeyi araştırmanızda kullanıyorsanız, lütfen alıntı yapın:
-```bibtex
-@misc{allergen_detection_2024,
-  title={YOLOv8 ile Alerjen Tespit Sistemi},
-  author={TÜBİTAK 2209-A Araştırma Projesi},
-  year={2024},
-  howpublished={\url{https://github.com/sema-c/allergen-detection}}
-}
-```
-
-## Sorumluluk Reddi
-
-**ÖNEMLİ**: Bu sistem yalnızca araştırma amaçlıdır ve tıbbi karar verme için kullanılmamalıdır. Gıda alerjileri ve diyet kısıtlamaları konusunda mutlaka sağlık uzmanlarına danışın. Model yüzde 100 doğruluk garantisi vermez ve kritik uygulamalarda kullanılmadan önce kapsamlı testlerden geçirilmelidir.
-
-## Katkıda Bulunma
-
-Katkılarınızı bekliyoruz! Lütfen şu adımları izleyin:
-
-1. Repository'yi fork edin
-2. Yeni bir özellik dalı oluşturun (`git checkout -b feature/iyilestirme`)
-3. Değişikliklerinizi commit edin (`git commit -m 'Yeni özellik eklendi'`)
-4. Dalınızı push edin (`git push origin feature/iyilestirme`)
-5. Pull Request açın
-
 ## Lisans
 
 Bu proje MIT Lisansı altında lisanslanmıştır - detaylar için [LICENSE](LICENSE) dosyasına bakın.
@@ -214,11 +188,3 @@ Bu proje MIT Lisansı altında lisanslanmıştır - detaylar için [LICENSE](LIC
 - [UECFOOD-256 Dataset](http://foodcam.mobi/dataset256.html) - Veri seti sağlayıcısı
 - [TÜBİTAK 2209-A Programı](https://www.tubitak.gov.tr) - Araştırma desteği
 - [Gradio](https://gradio.app/) - Web arayüz framework'ü
-
-## İletişim
-
-Sorularınız veya sorunlarınız için lütfen GitHub üzerinden issue açın.
-
----
-
-Bu projeyi faydalı bulduysanız yıldız vermeyi unutmayın!
