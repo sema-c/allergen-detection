@@ -182,9 +182,3 @@ allergen-detection/
 
 Bu proje MIT Lisansı altında lisanslanmıştır - detaylar için [LICENSE](LICENSE) dosyasına bakın.
 
-## Teşekkürler
-
-- [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics) - Nesne tanıma framework'ü
-- [UECFOOD-256 Dataset](http://foodcam.mobi/dataset256.html) - Veri seti sağlayıcısı
-- [TÜBİTAK 2209-A Programı](https://www.tubitak.gov.tr) - Araştırma desteği
-- [Gradio](https://gradio.app/) - Web arayüz framework'ü
