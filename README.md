@@ -74,10 +74,18 @@ pip install -r requirements.txt
 ```
 
 ### 4. Model Dosyasını İndirin
-Model dosyası (best.pt) boyutu nedeniyle Git LFS ile yönetilmektedir veya aşağıdaki linkten indirebilirsiniz:
-- [Google Drive Linki](https://drive.google.com/LINK_BURAYA_GELECEK)
+Model dosyası (best.pt, ~6MB) boyutu nedeniyle GitHub'da bulunmamaktadır. Aşağıdaki linkten indirebilirsiniz:
 
-İndirdikten sonra `models/` klasörüne yerleştirin.
+📥 **[Model İndir (best.pt - 6MB)](https://drive.google.com/file/d/1-sP7pEr0ZgFj2L0-25WVUluogDiqgM1g/view?usp=sharing)**
+
+İndirdikten sonra `models/` klasörüne yerleştirin:
+````bash
+# Linux/Mac
+mv ~/Downloads/best.pt models/
+
+# Windows
+move Downloads\best.pt models\
+```
 
 ## Kullanım
 
